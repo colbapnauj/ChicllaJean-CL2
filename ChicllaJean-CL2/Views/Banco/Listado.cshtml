@@ -1,0 +1,50 @@
+﻿@model IEnumerable<ChicllaJean_CL2.Models.Cliente>
+
+@{
+    ViewBag.Title = "Listado de CLientes";
+}
+
+<h2>Listado de Clientes</h2>
+<h3>CRUD con Base de Datos en Azure</h3>
+
+<p>
+    @Html.ActionLink("Registrar Cliente", "Create")
+</p>
+
+@if (Model.Count() == 0)
+{
+
+
+<div class="alert alert-warning">No existen registro de Clientes</div>
+} 
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.monto)
+        </th>
+        <th></th>
+    </tr>
+  
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.monto)
+            </td>
+
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.id })
+            </td>
+        </tr>
+    }
+    
+
+</table>

@@ -1,0 +1,45 @@
+﻿@model ChicllaJean_CL2.Models.Alumno
+
+@{
+    ViewBag.Title = "DeserializarAlumno";
+}
+
+<h2>DeserializarAlumno</h2>
+
+<div>
+    <h4>Alumno</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nrodocumento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nrodocumento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechanacimiento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechanacimiento)
+        </dd>
+
+    </dl>
+</div>
+<p
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+<p>
+    @ViewBag.mensaje
+</p>

@@ -1,0 +1,39 @@
+﻿@model ChicllaJean_CL2.Models.Cliente
+
+@{
+    ViewBag.Title = "Retirar";
+}
+
+<h2>Retirar</h2>
+
+
+@using (Html.BeginForm())
+{
+    <div class="form-group"></div>
+
+    <div style="display:none">
+        @Html.TextBox("clientId", Model.id, htmlAttributes: new { @class = "form-control" })
+
+    </div>
+
+    <label>Monto a retirar</label>
+    <div class="col-md-10">
+        @Html.TextBox("montoRetiro", null, htmlAttributes: new { @class = "form-control" })
+    </div>
+    <div class="mt-2">
+
+        <button class="btn btn-primary">Retirar</button>
+    </div>
+}
+
+<div clas="alert alert-danger">
+    @ViewBag.mensaje
+</div>
+
+<div>
+    @Html.ActionLink("Ver Listado", "Listado")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
